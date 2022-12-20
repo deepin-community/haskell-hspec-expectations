@@ -1,0 +1,65 @@
+Source: haskell-hspec-expectations
+Maintainer: Debian Haskell Group <pkg-haskell-maintainers@lists.alioth.debian.org>
+Uploaders: Clint Adams <clint@debian.org>
+Priority: optional
+Section: haskell
+Rules-Requires-Root: no
+Build-Depends: debhelper (>= 10),
+ haskell-devscripts (>= 0.13),
+ cdbs,
+ ghc (>= 8.0),
+ ghc-prof,
+ libghc-hunit-dev,
+ libghc-hunit-prof,
+ libghc-call-stack-dev,
+ libghc-call-stack-prof,
+Build-Depends-Indep: ghc-doc,
+ libghc-hunit-doc,
+ libghc-call-stack-doc,
+Standards-Version: 4.5.0
+Homepage: https://github.com/hspec/hspec-expectations#readme
+Vcs-Browser: https://salsa.debian.org/haskell-team/DHG_packages/tree/master/p/haskell-hspec-expectations
+Vcs-Git: https://salsa.debian.org/haskell-team/DHG_packages.git [p/haskell-hspec-expectations]
+
+Package: libghc-hspec-expectations-dev
+Architecture: any
+Depends: ${shlibs:Depends},
+ ${haskell:Depends},
+ ${misc:Depends},
+Recommends: ${haskell:Recommends},
+Suggests: ${haskell:Suggests},
+Provides: ${haskell:Provides},
+Description: catchy combinators for HUnit
+ Catchy combinators for HUnit: the three main primitives are shouldBe,
+ shouldSatisfy and shouldThrow. They can be used with HUnit, or any
+ framework that integrates with HUnit, like test-framework or Hspec.
+ .
+ This package contains the normal library files.
+
+Package: libghc-hspec-expectations-prof
+Architecture: any
+Depends: ${haskell:Depends},
+ ${misc:Depends},
+Recommends: ${haskell:Recommends},
+Suggests: ${haskell:Suggests},
+Provides: ${haskell:Provides},
+Description: catchy combinators for HUnit; profiling libraries
+ Catchy combinators for HUnit: the three main primitives are shouldBe,
+ shouldSatisfy and shouldThrow. They can be used with HUnit, or any
+ framework that integrates with HUnit, like test-framework or Hspec.
+ .
+ This package contains the libraries compiled with profiling enabled.
+
+Package: libghc-hspec-expectations-doc
+Architecture: all
+Section: doc
+Depends: ${haskell:Depends},
+ ${misc:Depends},
+Recommends: ${haskell:Recommends},
+Suggests: ${haskell:Suggests},
+Description: catchy combinators for HUnit; documentation
+ Catchy combinators for HUnit: the three main primitives are shouldBe,
+ shouldSatisfy and shouldThrow. They can be used with HUnit, or any
+ framework that integrates with HUnit, like test-framework or Hspec.
+ .
+ This package contains the documentation files.
